@@ -86,8 +86,17 @@ function gameOver(gameWon) {
 function declareWinner(who) {
     document.querySelector(".endgame").style.display = "block";
     document.querySelector('.endgame .text').innerText = who;
-    console.log(human_score);
-    console.log(computer_score);
+
+    document.getElementById("replay_button").onclick = function(){      //   event handler displays scores of each after replay button click
+
+        document.getElementById("human_wins").innerHTML = human_score[0];
+        document.getElementById("human_losses").innerHTML = human_score[1];
+
+        document.getElementById("computer_wins").innerHTML = computer_score[0];
+        document.getElementById("computer_losses").innerHTML = computer_score[1];
+
+        startGame();
+    };
 }
 
 function emptySquares() {
