@@ -1,3 +1,39 @@
+h1{
+    position: absolute;
+    top: 3%;
+    text-decoration: underline;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.me{
+    left: 25%;
+}
+
+.computer{
+    right: 21%;
+}
+
+.scores_table_me{
+    position: absolute;
+    left: 21%;
+    top: 10%;    
+}
+
+.scores_table_computer{
+    position: absolute;
+    right: 21%;
+    top: 10%;    
+}
+
+.scoreboard{
+    font-size: medium;
+    border: none;
+}
+
+.scores{
+    font-size: 1.2rem;
+}
+
 td{
     border: 2px solid #333;
     height: 100px;
@@ -9,7 +45,7 @@ td{
     cursor: pointer;
 }
 
-table {
+.game_board {
     border-collapse: collapse;
     position: absolute;
     left: 50%;

@@ -12,6 +12,9 @@ const winComb=[
     [2,4,6],
 ];
 
+let human_score = [0,0];
+let computer_score = [0,0];
+
 
 const cells=document.querySelectorAll('.cell');
 startGame();
@@ -25,7 +28,7 @@ function startGame() {
         cells[i].style.removeProperty('background-color');
         cells[i].addEventListener('click', turnClick, false);
     }
-    gameEnds=false;
+    gameEnds=false; 
 }
 
 function turnClick(square) {
@@ -67,13 +70,33 @@ function gameOver(gameWon) {
     for (let i = 0; i < cells.length; i++)
         cells[i].removeEventListener('click', turnClick, false);
 
-    declareWinner(gameWon.player=== human? 'You win!' : 'You lose!');
+    if(gameWon.player === human){
+        human_score[0]++;
+        computer_score[1]++;
+        declareWinner('You win!');
+    }
+    else{
+        computer_score[0]++;
+        human_score[1]++;
+        declareWinner('You lose!');
+    }
     gameEnds=true;
 }
 
 function declareWinner(who) {
     document.querySelector(".endgame").style.display = "block";
     document.querySelector('.endgame .text').innerText = who;
+
+    document.getElementById("replay_button").onclick = function(){      //   event handler displays scores of each after replay button click
+
+        document.getElementById("human_wins").innerHTML = human_score[0];
+        document.getElementById("human_losses").innerHTML = human_score[1];
+
+        document.getElementById("computer_wins").innerHTML = computer_score[0];
+        document.getElementById("computer_losses").innerHTML = computer_score[1];
+
+        startGame();
+    };
 }
 
 function emptySquares() {
