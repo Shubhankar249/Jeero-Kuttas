@@ -21,15 +21,17 @@ h1{
 
 .scores_table_computer{
     position: absolute;
-    right:20.5%;
+    right: 21%;
     top: 10%;    
 }
 
 .scoreboard{
     font-size: medium;
     border: none;
-    padding-right: 10%;
-    text-decoration: underline;
+}
+
+.scores{
+    font-size: 1.2rem;
 }
 
 td{
